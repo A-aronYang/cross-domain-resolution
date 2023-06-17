@@ -8,18 +8,20 @@ app.use(static('../client'))
 
 // 中间件
 // app.use(async (ctx, next) => {
-//   // 1.允许简单请求开启CORS
-//   ctx.set("Access-Control-Allow-Origin", "*")
-//   // 2.非简单请求开启下面的设置
-//   ctx.set("Access-Control-Allow-Headers", "Accept, AcceptEncoding, Connection, Host, Origin")
-//   ctx.set("Access-Control-Allow-Credentials", true) // cookie
-//   ctx.set("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS")
-//   // 3.发起的是一个options请求
-//   if (ctx.method === 'OPTIONS') {
-//     ctx.status = 204
-//   } else {
-//     await next()
-//   }
+  // 1.允许简单请求开启CORS
+  // ctx.set("Access-Control-Allow-Origin", "http://127.0.0.1:5500")
+  // ctx.set("Access-Control-Allow-Origin", "*")
+
+  // 2.非简单请求开启下面的设置(新版谷歌浏览器不需要以下设置)
+  // ctx.set("Access-Control-Allow-Headers", "Accept, AcceptEncoding, Connection, Host, Origin")
+  // ctx.set("Access-Control-Allow-Credentials", true) // 允许携带cookie
+  // ctx.set("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS")
+  // // 3.发起的是一个options请求
+  // if (ctx.method === 'OPTIONS') {
+  //   ctx.status = 204
+  // } else {
+  //   await next()
+  // }
 // })
 
 const userRouter = new KoaRouter({ prefix: '/users' })

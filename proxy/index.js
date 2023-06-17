@@ -1,6 +1,7 @@
 // node服务器代理
 // webpack => webpack-dev-server
 const express = require('express')
+// 创建代理中间件
 const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const app = express()
